@@ -1,0 +1,84 @@
+Website Documentation
+
+This document explains the structure and choices made in this personal portfolio website for Amol Choudhary.
+
+---
+
+1.  **HTML Elements Used and Their Purpose:**
+
+    * `<!DOCTYPE html>`: Declares the document type as HTML5.
+    * `<html>`: The root element of every HTML page.
+    * `<head>`: Contains meta-information about the HTML document (e.g., character set, viewport settings, title, links to stylesheets, favicons).
+        * `<meta charset="UTF-8">`: Specifies the character encoding to ensure proper display of various characters.
+        * `<meta name="viewport" content="width=device-width, initial-scale=1.0">`: Configures the viewport for responsive design, making the site adapt to different screen sizes on various devices.
+        * `<title>`: Sets the title of the web page, displayed in the browser tab or window title bar.
+        * `<link rel="icon" type="image/x-icon" href="favicon.ico">`: Links a favicon to the website.
+        * `<style>`: Embeds CSS styling directly within the HTML document for basic presentation.
+    * `<body>`: Contains all the visible content of the web page.
+    * `<header>`: Represents introductory content, typically containing navigation and headings for the entire page or a section. (Semantic HTML5)
+    * `<nav>`: Defines a set of navigation links. (Semantic HTML5)
+    * `<ul>`: An unordered list, used for items where order doesn't matter (e.g., skills, navigation links, general lists).
+    * `<ol>`: An ordered list, used for items where order is important (e.g., educational background).
+    * `<li>`: Represents a list item within `<ul>` or `<ol>`.
+    * `<a>`: The anchor tag, used to create hyperlinks to other pages, sections within the same page, or external websites.
+    * `<main>`: Represents the dominant content of the `<body>`. There should only be one `<main>` element per document. (Semantic HTML5)
+    * `<section>`: A generic standalone section of a document, typically with a heading. Used to group related content. (Semantic HTML5)
+    * `<h1>` to `<h6>`: Heading tags of different levels, used to structure content hierarchically. `<h1>` is usually the main heading of a page or major section.
+    * `<p>`: Defines a paragraph of text.
+    * `<img>`: Embeds an image into the document. The `alt` attribute provides alternative text for accessibility if the image cannot be displayed.
+    * `<table>`: Creates a table to display tabular data (e.g., work experience, projects).
+    * `<thead>`: Groups the header content in a table.
+    * `<tbody>`: Groups the body content in a table.
+    * `<tr>`: Defines a row in a table.
+    * `<th>`: Defines a header cell in a table.
+    * `<td>`: Defines a standard data cell in a table.
+    * `<footer>`: Represents a footer for its nearest sectioning content or the root element. Typically contains copyright information, contact links, or links to related documents. (Semantic HTML5)
+    * `<form>`: Represents a document section containing interactive controls for submitting information.
+    * `<fieldset>`: Used to group related elements within a form, often with a `<legend>`.
+    * `<legend>`: Provides a caption for the content of its parent `<fieldset>`.
+    * `<label>`: Defines a caption for an item in a user interface. Crucial for accessibility as it associates text with an input control.
+    * `<input>`: Used to create interactive controls for web-based forms. Various `type` attributes define its behavior (e.g., `text`, `email`, `tel`, `date`, `range`, `checkbox`, `radio`, `submit`).
+    * `<textarea>`: Defines a multi-line plain-text editing control for longer user input (e.g., messages).
+    * `<select>`: Represents a control that provides a menu of options (dropdown).
+    * `<option>`: Defines an item in a `<select>` element.
+    * `<output>`: Represents the result of a calculation or user action, often used to display the current value of a range slider.
+    * `<strong>`: Renders text with strong importance (usually bold).
+
+---
+
+2.  **Why Specific Input Types Were Chosen:**
+
+    * `<input type="text">` for Name, Security Code: Most common input for short, single-line text strings. `pattern` attribute added for security code for format validation.
+    * `<input type="email">` for Email: Provides client-side validation for email format and often triggers appropriate mobile keyboards.
+    * `<input type="tel">` for Phone Number: Semantically indicates a telephone number, and on mobile devices, it brings up a numeric keypad. The `pattern` attribute was added for basic 10-digit validation.
+    * `<textarea>` for Message: Allows users to input multi-line text for longer messages.
+    * `<input type="checkbox">` for Preferred Contact Methods: Allows users to select **multiple** options from a set (e.g., they might prefer both Email and Phone Call).
+    * `<input type="radio">` for Inquiry Type: Allows users to select **only one** option from a set of mutually exclusive choices (e.g., an inquiry can only be General OR Business OR Support). The `checked` attribute sets a default selection.
+    * `<input type="date">` for Ideal Project Start Date: Provides a native date picker interface, making it easy for users to select a date and ensuring consistent date format.
+    * `<input type="range">` for Comfort Level and Project Liking: Ideal for selecting a value from a continuous range, providing a visual slider. The `min`, `max`, `value`, and `step` attributes define the range and default.
+    * `<input type="submit">`: Creates a button that submits the form data to the server.
+
+    **Validation Attributes (`required`, `pattern`, `title`):**
+    * `required`: Used on various input fields (Name, Email, Message, Select, Date, Security Code) to enforce that the user must fill out these fields before submitting the form. This provides basic client-side validation, preventing empty submissions.
+    * `pattern="[0-9]{10}"` on phone: Ensures the input matches a regular expression, in this case, exactly 10 digits for the phone number.
+    * `title`: Provides a tooltip message (often displayed on hover or when validation fails) explaining the required format for an input with a `pattern`.
+
+---
+
+3.  **Navigation Structure:**
+
+    The website has a clear, consistent navigation structure implemented across all three main pages (`portfolio.html`, `about.html`, `contact.html`).
+
+    * **Main Navigation Bar:** Each HTML file includes a `<nav>` element within its `<header>`. This `<nav>` contains an unordered list (`<ul>`) of links. This placement in the header ensures it's prominently displayed on every page.
+    * **Internal Page-to-Page Links:**
+        * `<li><a href="portfolio.html">Home</a></li>`
+        * `<li><a href="about.html">About Me</a></li>`
+        * `<li><a href="contact.html">Contact</a></li>`
+        These links use **relative paths** (`portfolio.html`, `about.html`, `contact.html`) to navigate between the HTML files which are all located in the same directory. This makes the website portable, as it doesn't depend on the absolute file location on a specific computer or server.
+    * **Internal Page Section Link (on `about.html`):**
+        * `<a href="portfolio.html#projects">Projects Section</a>`: This link demonstrates how to link to a specific section *within another HTML file*. It works by appending `#` followed by the `id` of the target element (e.g., `<section id="projects">` on `portfolio.html`). When clicked, the browser navigates to `portfolio.html` and automatically scrolls down to the element with that `id`.
+    * **External Links (on `about.html`):**
+        * `<a href="https://developer.mozilla.org/en-US/docs/Web" target="_blank" rel="noopener noreferrer">MDN Web Docs</a>`: These links point to external websites. The `target="_blank"` attribute is used to open these external links in a new browser tab or window, keeping the user on the current portfolio website. The `rel="noopener noreferrer"` attribute is added for security best practices when opening links in new tabs.
+    * **Footer Navigation:** Each sub-page (`about.html`, `contact.html`) also includes a direct link (`<a href="portfolio.html">Back to Home Page</a>`) in its `<footer>` for easy return to the main page. This offers an additional, convenient navigation point at the bottom of the page.
+
+    This comprehensive navigation strategy ensures users can easily move between the different sections and pages of the portfolio and access external resources when needed, contributing to a good user experience.

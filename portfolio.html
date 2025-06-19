@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio-main page</title>
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" >
+</head>
+<body>
+    <header class="IntroSection">
+        <h1>My Personal Portfolio</h1>
+    <nav>
+        <ul class="navList">
+            <li><a href="portfolio.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    </header>
+    
+<main>
+    <section class="MyInfo">
+        <h2>About Me (Breif Overview)</h2>
+        <h3>Welcome to my portfolio!</h3>
+        <p>Hi, I'm Amol Choudhary, a technophile . 
+            I enjoy creating and exploring new websites. <br>
+            This website showcases my skills and projects.</p>
+    </section>
+    <div id="MyImage">
+        <img src="./images/My_image.jpg" alt="My image" height="200px" width="200px">
+    </div>
+    <section class="MySkills">
+        <h3>My Skills:</h3>
+        <ul>
+            <li>HTML5</li>
+            <li>CSS</li>
+            <li>Javascript(basics)</li>
+            <li>C++</li>
+        </ul>
+    </section>
+    
+    <section class="MyEducation">
+        <h3>My Educational Background:</h3>
+        <ul>
+            <li><b>B.Tech(CSE)</b> from Central University Of Jammu(2023-2027) </li>
+            <li>MV International School,Jammu(2012-2022)</li>
+        </ul>
+    </section>
+    
+    <div class="MyProjects">
+        <h3>My Projects:</h3>
+        <table border="1" cellspacing="0" cellpadding="8">
+            <thead>
+                <tr>
+                    <th>SNO.</th>
+                    <th>PROJECT NAME</th>
+                    <th>LANGUAGE USED</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1.</td>
+                    <td>Product catalog</td>
+                    <td>HTML5</td>
+                </tr>
+                <tr>
+                    <td>2.</td>
+                    <td>Recipe Page</td>
+                    <td>HTML5,CSS</td>
+                </tr>
+                <tr>
+                    <td>3.</td>
+                    <td>Credit Card fraud detection</td>
+                    <td>Python</td>
+                </tr>
+                <tr>
+                    <td>4.</td>
+                    <td>Blog webpage</td>
+                    <td>HTML5,CSS</td>
+                </tr>
+                <tr>
+                    <td>5.</td>
+                    <td>Flash Cards page</td>
+                    <td>HTML5,CSS</td>
+                </tr>
+                <tr>
+                    <td>5.</td>
+                    <td>StudySync Clone</td>
+                    <td>HTML5,CSS</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="ProjectExamples">
+        <h4>A glimpse into my work:</h4>
+        <div>
+            <h6>1. Credit Card </h6>
+            <img src="./images/credit card.jpg" id="CreditCard" alt="Credit Card Project" width="500px" height="250px">
+            <h6>2. Flash Cards webpage</h6>
+            <img src="./images/flash card.jpg" alt="Flash Cards project" id="FlashCard" width="500px" height="250px">
+        </div>
+        <h5>Rate my work(1-10): </h5>
+        <div class="slidecontainer">
+        <input type="range" min="1" max="10" value="1" class="slider" id="myRange">
+        </div>
+    </div>
+</main>
+<footer>
+<p>&copy; 2025 Amol Choudhary. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
